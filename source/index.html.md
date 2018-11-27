@@ -12,13 +12,27 @@ search: true
 
 # Introduction
 
-Welcome to Scogo API documentation. Scogo API endpoint is ```https://cloud.scogo.in/api/v1```
+Welcome to Scogo API documentation. Scogo API endpoint is ```https://api.scogo.in/v1```
 
-For API document correction contact karan@scogo.in
+### What API commands are used by Scogo ?
+Scogo APIs are plain JSON over HTTP and use the following HTTP verbs:
+
+Command | Purpose
+--------- | -------
+GET | Fetch one or more objects
+POST | Create an object
+PUT | Update an object
+DELETE | Remove an object
+
+<aside class="notice">
+All API requests should hit the secured endpoint i.e. only HTTPS. Calls made over plain HTTP will fail
+</aside>
 
 # /auth
 
 Authenticate a user and return ``jwt`` token.
+
+All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.
 
 ## GET
 
@@ -26,7 +40,7 @@ This endpoint retrieves all the service partners.
 
 ### HTTP Request
 
-`GET https://cloud.scogo.in/api/v1/servicePartners`
+`GET https://api.scogo.in/v1/servicePartners`
 
 ### Query Parameters
 
@@ -58,7 +72,7 @@ This endpoint retrieves all the service partners.
 
 ### HTTP Request
 
-`GET https://cloud.scogo.in/api/v1/servicePartners`
+`GET https://api.scogo.in/v1/servicePartners`
 
 ### Query Parameters
 
@@ -69,7 +83,7 @@ available | true | If set to false, the result will include kittens that have al
 
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/servicePartners"
+curl "https://api.scogo.in/v1/servicePartners"
   -H "Authorization: YourTokenHere"
 ```
 
@@ -101,7 +115,7 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET https://cloud.scogo.in/api/v1/servicePartner/<ID>`
+`GET https://api.scogo.in/v1/servicePartner/<ID>`
 
 ### URL Parameters
 
@@ -110,7 +124,7 @@ Parameter | Description
 ID | The ID of the service partner to retrieve
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/servicePartners/2"
+curl "https://api.scogo.in/v1/servicePartners/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -134,7 +148,7 @@ This endpoint deletes a specified service partner.
 
 ### HTTP Request
 
-`DELETE https://cloud.scogo.in/api/v1/servicePartners/<ID>`
+`DELETE https://api.scogo.in/v1/servicePartners/<ID>`
 
 ### URL Parameters
 
@@ -143,7 +157,7 @@ Parameter | Description
 ID | The ID of the service partner to be deleted
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/servicePartners/2"
+curl "https://api.scogo.in/v1/servicePartners/2"
   -X DELETE
   -H "Authorization: JWT_Token"
 ```
@@ -168,7 +182,7 @@ This endpoint retrieves all the courier partners.
 
 ### HTTP Request
 
-`GET https://cloud.scogo.in/api/v1/courierPartners`
+`GET https://api.scogo.in/v1/courierPartners`
 
 ### Query Parameters
 
@@ -179,7 +193,7 @@ available | true | If set to false, the result will include kittens that have al
 
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/courierPartners"
+curl "https://api.scogo.in/v1/courierPartners"
   -H "Authorization: YourTokenHere"
 ```
 
@@ -211,7 +225,7 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET https://cloud.scogo.in/api/v1/courierPartner/<ID>`
+`GET https://api.scogo.in/v1/courierPartner/<ID>`
 
 ### URL Parameters
 
@@ -220,7 +234,7 @@ Parameter | Description
 ID | The ID of the courier partner to retrieve
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/courierPartners/2"
+curl "https://api.scogo.in/v1/courierPartners/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -244,7 +258,7 @@ This endpoint deletes a specified courier partner.
 
 ### HTTP Request
 
-`DELETE https://cloud.scogo.in/api/v1/courierPartners/<ID>`
+`DELETE https://api.scogo.in/v1/courierPartners/<ID>`
 
 ### URL Parameters
 
@@ -253,7 +267,7 @@ Parameter | Description
 ID | The ID of the courier partner to be deleted
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/courierPartners/2"
+curl "https://api.scogo.in/v1/courierPartners/2"
   -X DELETE
   -H "Authorization: JWT_Token"
 ```
@@ -277,7 +291,7 @@ This endpoint retrieves all the courier partners.
 
 ### HTTP Request
 
-`GET https://cloud.scogo.in/api/v1/fieldEngineers`
+`GET https://api.scogo.in/v1/fieldEngineers`
 
 ### Query Parameters
 
@@ -288,7 +302,7 @@ available | true | If set to false, the result will include kittens that have al
 
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/fieldEngineers"
+curl "https://api.scogo.in/v1/fieldEngineers"
   -H "Authorization: YourTokenHere"
 ```
 
@@ -320,7 +334,7 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET https://cloud.scogo.in/api/v1/courierPartner/<ID>`
+`GET https://api.scogo.in/v1/courierPartner/<ID>`
 
 ### URL Parameters
 
@@ -329,7 +343,7 @@ Parameter | Description
 ID | The ID of the courier partner to retrieve
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/fieldEngineers/2"
+curl "https://api.scogo.in/v1/fieldEngineers/2"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -353,7 +367,7 @@ This endpoint deletes a specified courier partner.
 
 ### HTTP Request
 
-`DELETE https://cloud.scogo.in/api/v1/fieldEngineers/<ID>`
+`DELETE https://api.scogo.in/v1/fieldEngineers/<ID>`
 
 ### URL Parameters
 
@@ -362,7 +376,7 @@ Parameter | Description
 ID | The ID of the courier partner to be deleted
 
 ```shell
-curl "https://cloud.scogo.in/api/v1/fieldEngineers/2"
+curl "https://api.scogo.in/v1/fieldEngineers/2"
   -X DELETE
   -H "Authorization: JWT_Token"
 ```
